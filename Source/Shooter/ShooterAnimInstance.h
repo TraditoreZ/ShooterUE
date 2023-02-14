@@ -14,27 +14,24 @@ class SHOOTER_API UShooterAnimInstance : public UAnimInstance
 {
 	GENERATED_BODY()
 public:
-	UFUNCTION(BlueprintCallable)
-		void UpdateAnimationProperties(float DeltaTime);
+	virtual void NativeUpdateAnimation(float DeltaTime) override;
 	// 动画初始化
 	virtual void NativeInitializeAnimation() override;
 
-
 private:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, CateGory = Movement, meta = (AllowPrivateAccess = "true"))
-		/*射击角色类*/
-		class AShooterCharacter* ShooterCharacter;
+	/*射击角色类*/
+	class AShooterCharacter* ShooterCharacter;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, CateGory = Movement, meta = (AllowPrivateAccess = "true"))
-		/* 角色速度 */
-		float speed;
+	/* 角色速度 */
+	float speed;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, CateGory = Movement, meta = (AllowPrivateAccess = "true"))
-		/*是否在空中 */
-		bool bIsInAir;
+	/*是否在空中 */
+	bool bIsInAir;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, CateGory = Movement, meta = (AllowPrivateAccess = "true"))
-		/*是否加速中*/
-		bool bIsAccelerating;
-
+	/*是否加速中*/
+	bool bIsAccelerating;
 };

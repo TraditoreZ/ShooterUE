@@ -4,7 +4,7 @@
 #include "ShooterAnimInstance.h"
 #include "ShooterCharacter.h"
 #include "GameFrameWork\CharacterMovementComponent.h"
-void UShooterAnimInstance::UpdateAnimationProperties(float DeltaTime)
+void UShooterAnimInstance::NativeUpdateAnimation(float DeltaTime)
 {
 	if (ShooterCharacter == nullptr)
 	{
